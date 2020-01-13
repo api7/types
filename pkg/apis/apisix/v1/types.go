@@ -1,5 +1,7 @@
 package v1
 
+import "encoding/json"
+
 // Route apisix route object
 // +k8s:deepcopy-gen=true
 type Route struct {
@@ -16,6 +18,20 @@ type Route struct {
 // Plugin customize plugin struct
 type Plugin struct {
 	Config map[string]interface{} `json:"config,omitempty" yaml:"config,omitempty"`
+}
+
+func (p *Plugin) DeepCopyInto(out *Plugin) {
+	b, _ := json.Marshal(&p.Config)
+	_ = json.Unmarshal(b, out.Config)
+}
+
+func (p *Plugin) DeepCopy() *Plugin {
+	if p.Config == nil {
+		return nil
+	}
+	out := new(Plugin)
+	p.DeepCopyInto(out)
+	return out
 }
 
 // Service apisix service

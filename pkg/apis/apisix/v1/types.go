@@ -14,7 +14,6 @@ type Route struct {
 }
 
 // Plugin customize plugin struct
-// +k8s:deepcopy-gen=true
 type Plugin struct {
 	Config map[string]interface{} `json:"config,omitempty" yaml:"config,omitempty"`
 }

@@ -59,6 +59,11 @@ func (in *Route) DeepCopyInto(out *Route) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Host != nil {
+		in, out := &in.Host, &out.Host
+		*out = new(string)
+		**out = **in
+	}
 	if in.Path != nil {
 		in, out := &in.Path, &out.Path
 		*out = new(string)
@@ -96,8 +101,7 @@ func (in *Route) DeepCopyInto(out *Route) {
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(Plugin)
-				(*in).DeepCopyInto(*out)
+				*out = (*in).DeepCopy()
 			}
 		}
 	}
@@ -138,8 +142,7 @@ func (in *Service) DeepCopyInto(out *Service) {
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
-				*out = new(Plugin)
-				(*in).DeepCopyInto(*out)
+				*out = (*in).DeepCopy()
 			}
 		}
 	}

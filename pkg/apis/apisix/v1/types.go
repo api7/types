@@ -6,7 +6,7 @@ import "encoding/json"
 // +k8s:deepcopy-gen=true
 type Route struct {
 	ID         *string   `json:"id,omitempty" yaml:"id,omitempty"`
-	Host       string    `json:"host,omitempty" yaml:"host,omitempty"`
+	Host       *string    `json:"host,omitempty" yaml:"host,omitempty"`
 	Path       *string   `json:"path,omitempty" yaml:"path,omitempty"`
 	Name       *string   `json:"name,omitempty" yaml:"name,omitempty"`
 	Methods    []*string `json:"methods,omitempty" yaml:"methods,omitempty"`

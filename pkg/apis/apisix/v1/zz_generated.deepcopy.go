@@ -90,8 +90,18 @@ func (in *Route) DeepCopyInto(out *Route) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ServiceName != nil {
+		in, out := &in.ServiceName, &out.ServiceName
+		*out = new(string)
+		**out = **in
+	}
 	if in.UpstreamId != nil {
 		in, out := &in.UpstreamId, &out.UpstreamId
+		*out = new(string)
+		**out = **in
+	}
+	if in.UpstreamName != nil {
+		in, out := &in.UpstreamName, &out.UpstreamName
 		*out = new(string)
 		**out = **in
 	}

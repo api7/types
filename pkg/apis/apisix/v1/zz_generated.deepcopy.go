@@ -107,13 +107,7 @@ func (in *Route) DeepCopyInto(out *Route) {
 	}
 	if in.Plugins != nil {
 		in, out := &in.Plugins, &out.Plugins
-		*out = make([]*Plugin, len(*in))
-		for i := range *in {
-			if (*in)[i] != nil {
-				in, out := &(*in)[i], &(*out)[i]
-				*out = (*in).DeepCopy()
-			}
-		}
+		*out = (*in).DeepCopy()
 	}
 	return
 }
@@ -148,13 +142,7 @@ func (in *Service) DeepCopyInto(out *Service) {
 	}
 	if in.Plugins != nil {
 		in, out := &in.Plugins, &out.Plugins
-		*out = make([]*Plugin, len(*in))
-		for i := range *in {
-			if (*in)[i] != nil {
-				in, out := &(*in)[i], &(*out)[i]
-				*out = (*in).DeepCopy()
-			}
-		}
+		*out = (*in).DeepCopy()
 	}
 	return
 }

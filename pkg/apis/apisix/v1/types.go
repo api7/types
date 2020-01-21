@@ -14,24 +14,27 @@ type Route struct {
 	ServiceName  *string   `json:"service_name,omitempty" yaml:"service_name,omitempty"`
 	UpstreamId   *string   `json:"upstream_id,omitempty" yaml:"upstream_id,omitempty"`
 	UpstreamName *string   `json:"upstream_name,omitempty" yaml:"upstream_name,omitempty"`
-	Plugins      []*Plugin `json:"plugins,omitempty" yaml:"plugins,omitempty"`
+	Plugins      *Plugins `json:"plugins,omitempty" yaml:"plugins,omitempty"`
 }
+
+type Plugins map[string]interface{}
+
 
 // Plugin customize plugin struct
 type Plugin struct {
 	Config map[string]interface{} `json:"config,omitempty" yaml:"config,omitempty"`
 }
 
-func (p *Plugin) DeepCopyInto(out *Plugin) {
-	b, _ := json.Marshal(&p.Config)
-	_ = json.Unmarshal(b, out.Config)
+func (p *Plugins) DeepCopyInto(out *Plugins) {
+	b, _ := json.Marshal(&p)
+	_ = json.Unmarshal(b, out)
 }
 
-func (p *Plugin) DeepCopy() *Plugin {
-	if p.Config == nil {
+func (p *Plugins) DeepCopy() *Plugins {
+	if p == nil {
 		return nil
 	}
-	out := new(Plugin)
+	out := new(Plugins)
 	p.DeepCopyInto(out)
 	return out
 }

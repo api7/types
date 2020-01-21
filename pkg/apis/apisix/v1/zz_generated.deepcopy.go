@@ -140,6 +140,11 @@ func (in *Service) DeepCopyInto(out *Service) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.UpstreamName != nil {
+		in, out := &in.UpstreamName, &out.UpstreamName
+		*out = new(string)
+		**out = **in
+	}
 	if in.Plugins != nil {
 		in, out := &in.Plugins, &out.Plugins
 		*out = (*in).DeepCopy()

@@ -14,7 +14,7 @@ type Route struct {
 	ServiceName  *string   `json:"service_name,omitempty" yaml:"service_name,omitempty"`
 	UpstreamId   *string   `json:"upstream_id,omitempty" yaml:"upstream_id,omitempty"`
 	UpstreamName *string   `json:"upstream_name,omitempty" yaml:"upstream_name,omitempty"`
-	Plugins      *Plugins `json:"plugins,omitempty" yaml:"plugins,omitempty"`
+	Plugins      *Plugins  `json:"plugins,omitempty" yaml:"plugins,omitempty"`
 }
 
 type Plugins map[string]interface{}
@@ -36,10 +36,11 @@ func (p *Plugins) DeepCopy() *Plugins {
 // Service apisix service
 // +k8s:deepcopy-gen=true
 type Service struct {
-	ID         *string   `json:"id,omitempty" yaml:"id,omitempty"`
-	Name       *string   `json:"name,omitempty" yaml:"name,omitempty"`
-	UpstreamId *string   `json:"upstream_id,omitempty" yaml:"upstream_id,omitempty"`
-	Plugins    *Plugins `json:"plugins,omitempty" yaml:"plugins,omitempty"`
+	ID           *string  `json:"id,omitempty" yaml:"id,omitempty"`
+	Name         *string  `json:"name,omitempty" yaml:"name,omitempty"`
+	UpstreamId   *string  `json:"upstream_id,omitempty" yaml:"upstream_id,omitempty"`
+	UpstreamName *string  `json:"upstream_name,omitempty" yaml:"upstream_name,omitempty"`
+	Plugins      *Plugins `json:"plugins,omitempty" yaml:"plugins,omitempty"`
 }
 
 // Upstream apisix upstream

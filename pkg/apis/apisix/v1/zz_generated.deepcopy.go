@@ -195,6 +195,11 @@ func (in *Upstream) DeepCopyInto(out *Upstream) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.HashOn != nil {
+		in, out := &in.HashOn, &out.HashOn
+		*out = new(string)
+		**out = **in
+	}
 	if in.Key != nil {
 		in, out := &in.Key, &out.Key
 		*out = new(string)

@@ -216,6 +216,11 @@ func (in *Upstream) DeepCopyInto(out *Upstream) {
 			}
 		}
 	}
+	if in.FromKind != nil {
+		in, out := &in.FromKind, &out.FromKind
+		*out = new(string)
+		**out = **in
+	}
 	return
 }
 

@@ -55,6 +55,7 @@ type Upstream struct {
 	HashOn          *string `json:"hash_on,omitemtpy" yaml:"hash_on,omitempty"`
 	Key             *string `json:"key,omitempty" yaml:"key,omitempty"`
 	Nodes           []*Node `json:"nodes,omitempty" yaml:"nodes,omitempty"`
+	FromKind        *string `json:"from_kind,omitempty" yaml:"from_kind,omitempty"`
 }
 
 // Node the node in upstream

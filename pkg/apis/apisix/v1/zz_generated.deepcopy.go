@@ -159,6 +159,11 @@ func (in *Service) DeepCopyInto(out *Service) {
 		in, out := &in.Plugins, &out.Plugins
 		*out = (*in).DeepCopy()
 	}
+	if in.FromKind != nil {
+		in, out := &in.FromKind, &out.FromKind
+		*out = new(string)
+		**out = **in
+	}
 	return
 }
 

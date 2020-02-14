@@ -43,6 +43,7 @@ type Service struct {
 	UpstreamId      *string  `json:"upstream_id,omitempty" yaml:"upstream_id,omitempty"`
 	UpstreamName    *string  `json:"upstream_name,omitempty" yaml:"upstream_name,omitempty"`
 	Plugins         *Plugins `json:"plugins,omitempty" yaml:"plugins,omitempty"`
+	FromKind        *string `json:"from_kind,omitempty" yaml:"from_kind,omitempty"`
 }
 
 // Upstream apisix upstream

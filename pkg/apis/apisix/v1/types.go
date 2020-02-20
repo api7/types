@@ -7,6 +7,7 @@ import "encoding/json"
 type Route struct {
 	ID              *string   `json:"id,omitempty" yaml:"id,omitempty"`
 	Group           *string   `json:"group,omitempty" yaml:"group,omitempty"`
+	FullName        *string   `json:"full_name,omitempty" yaml:"full_name,omitempty"`
 	ResourceVersion *string   `json:"resource_version,omitempty" yaml:"resource_version,omitempty"`
 	Host            *string   `json:"host,omitempty" yaml:"host,omitempty"`
 	Path            *string   `json:"path,omitempty" yaml:"path,omitempty"`
@@ -39,6 +40,7 @@ func (p *Plugins) DeepCopy() *Plugins {
 // +k8s:deepcopy-gen=true
 type Service struct {
 	ID              *string  `json:"id,omitempty" yaml:"id,omitempty"`
+	FullName        *string  `json:"full_name,omitempty" yaml:"full_name,omitempty"`
 	Group           *string  `json:"group,omitempty" yaml:"group,omitempty"`
 	ResourceVersion *string  `json:"resource_version,omitempty" yaml:"resource_version,omitempty"`
 	Name            *string  `json:"name,omitempty" yaml:"name,omitempty"`
@@ -52,6 +54,7 @@ type Service struct {
 // +k8s:deepcopy-gen=true
 type Upstream struct {
 	ID              *string `json:"id,omitempty" yaml:"id,omitempty"`
+	FullName        *string `json:"full_name,omitempty" yaml:"full_name,omitempty"`
 	Group           *string `json:"group,omitempty" yaml:"group,omitempty"`
 	ResourceVersion *string `json:"resource_version,omitempty" yaml:"resource_version,omitempty"`
 	Name            *string `json:"name,omitempty" yaml:"name,omitempty"`

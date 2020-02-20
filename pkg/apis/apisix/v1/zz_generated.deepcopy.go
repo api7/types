@@ -64,6 +64,11 @@ func (in *Route) DeepCopyInto(out *Route) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.FullName != nil {
+		in, out := &in.FullName, &out.FullName
+		*out = new(string)
+		**out = **in
+	}
 	if in.ResourceVersion != nil {
 		in, out := &in.ResourceVersion, &out.ResourceVersion
 		*out = new(string)
@@ -140,6 +145,11 @@ func (in *Service) DeepCopyInto(out *Service) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.FullName != nil {
+		in, out := &in.FullName, &out.FullName
+		*out = new(string)
+		**out = **in
+	}
 	if in.Group != nil {
 		in, out := &in.Group, &out.Group
 		*out = new(string)
@@ -192,6 +202,11 @@ func (in *Upstream) DeepCopyInto(out *Upstream) {
 	*out = *in
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
+		*out = new(string)
+		**out = **in
+	}
+	if in.FullName != nil {
+		in, out := &in.FullName, &out.FullName
 		*out = new(string)
 		**out = **in
 	}

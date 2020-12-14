@@ -72,3 +72,11 @@ type Node struct {
 	Port   *int    `json:"port,omitempty" yaml:"port,omitempty"`
 	Weight *int    `json:"weight,omitempty" yaml:"weight,omitempty"`
 }
+
+// Ssl apisix ssl object
+// +k8s:deepcopy-gen=true
+type Ssl struct {
+	Sni  *string `json:"sni,omitempty" yaml:"sni,omitempty"`
+	Cert *string `json:"cert,omitempty" yaml:"cert,omitempty"`
+	Key  *string `json:"key,omitempty" yaml:"key,omitempty"`
+}

@@ -231,6 +231,11 @@ func (in *Ssl) DeepCopyInto(out *Ssl) {
 		*out = new(int)
 		**out = **in
 	}
+	if in.Group != nil {
+		in, out := &in.Group, &out.Group
+		*out = new(string)
+		**out = **in
+	}
 	return
 }
 

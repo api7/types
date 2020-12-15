@@ -76,7 +76,9 @@ type Node struct {
 // Ssl apisix ssl object
 // +k8s:deepcopy-gen=true
 type Ssl struct {
-	Sni  *string `json:"sni,omitempty" yaml:"sni,omitempty"`
-	Cert *string `json:"cert,omitempty" yaml:"cert,omitempty"`
-	Key  *string `json:"key,omitempty" yaml:"key,omitempty"`
+	ID     *string   `json:"id,omitempty" yaml:"id,omitempty"`
+	Snis   []*string `json:"snis,omitempty" yaml:"snis,omitempty"`
+	Cert   *string   `json:"cert,omitempty" yaml:"cert,omitempty"`
+	Key    *string   `json:"key,omitempty" yaml:"key,omitempty"`
+	Status *int      `json:"status,omitempty" yaml:"status,omitempty"`
 }

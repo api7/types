@@ -81,4 +81,5 @@ type Ssl struct {
 	Cert   *string   `json:"cert,omitempty" yaml:"cert,omitempty"`
 	Key    *string   `json:"key,omitempty" yaml:"key,omitempty"`
 	Status *int      `json:"status,omitempty" yaml:"status,omitempty"`
+	Group  *string   `json:"group,omitempty" yaml:"group,omitempty"`
 }
